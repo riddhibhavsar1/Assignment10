@@ -1,4 +1,5 @@
 import 'package:assignment10/Pages/Assignment11(4).dart';
+import 'package:assignment10/Pages/Assignment12.dart';
 import 'package:assignment10/Pages/assignment11(1).dart';
 import 'package:assignment10/Pages/assignment9(1).dart';
 import 'package:assignment10/Pages/assignment9(2).dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:assignment10/extentions/ScreenSize.dart';
 
 import 'Assignment11(2).dart';
+import 'Assignment11(6).dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
         key: _scaffoldKey,
         appBar: MyAppBar(
@@ -46,10 +48,11 @@ class _HomePageState extends State<HomePage> {
             isScrollable: true,
             indicatorColor: Colors.white,
             tabs: [
-              Tab(text: 'Promotion', icon: Icon(Icons.pages_rounded)),
-              Tab(text: 'Padel Tennis', icon: Icon(Icons.sports_tennis)),
-              Tab(text: 'Football', icon: Icon(Icons.sports_soccer)),
-              Tab(text: 'Basketball', icon: Icon(Icons.sports_basketball)),
+              Tab(text: 'Assignment 11-1', icon: Icon(Icons.pages_rounded)),
+              Tab(text: 'Assignment 11-2', icon: Icon(Icons.sports_tennis)),
+              Tab(text: 'Assignment 11-6', icon: Icon(Icons.sports_soccer)),
+              Tab(text: 'Assignment 11-4', icon: Icon(Icons.sports_basketball)),
+              Tab(text: 'Assignment 12', icon: Icon(Icons.sports_basketball)),
             ],
           ),
         ),
@@ -71,7 +74,14 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(builder: (context) => Assignment11_2()));
               },
             ),
-            Center(child: Text('Tab 3')),
+            InkWell(
+                child: Center(child: Text('Assignment 11(6)')),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Assignment11_6()));
+                }),
             InkWell(
                 child: Center(child: Text('Assignment 11(4)')),
                 onTap: () {
@@ -79,6 +89,14 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => Assignment11_4()));
+                }),
+            InkWell(
+                child: Center(child: Text('Assignment 12')),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Assignment_12()));
                 }),
           ],
         ),
