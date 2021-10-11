@@ -1,12 +1,15 @@
 import 'dart:async';
 
 import 'package:assignment10/Pages/BookdetailScreen.dart';
+import 'package:assignment10/Pages/HomePage.dart';
 import 'package:assignment10/model/Books.dart';
 import 'package:assignment10/utils/Constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:shimmer/shimmer.dart';
+
+import 'MapScreen.dart';
 
 class BooklistScreen extends StatefulWidget {
   BooklistScreen({Key? key}) : super(key: key);
@@ -62,6 +65,11 @@ class _BooklistScreenState extends State<BooklistScreen> {
 
               title: Text(bookList[index].title),
               subtitle: Text(bookList[index].author),
+              trailing: GestureDetector(child: CircleAvatar(child:Icon(Icons.directions),backgroundColor: Colors.brown,radius: 18,)
+             , onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => MapScreen(),));
+            },
+              ),
             );
           });
     } else {
